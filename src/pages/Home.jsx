@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getTrendsOfMovies } from "components/services/getApi";
+import LoadMoreButton from "components/LoadMoreButton/LoadMoreButton";
+import HomeGallery from "../components/GalleryList/HomeGallery";
 
 
 const Home = () => {
@@ -22,7 +24,7 @@ const Home = () => {
 
     return(
         <>
-      <HomeGalleryList movies={movies} state={{ from: location }} />
+      <HomeGallery movies={movies} state={{ from: location }} />
       {total !== page && <LoadMoreButton onClick={handleLoadMoreButton} />}
     </>
   );
