@@ -22,10 +22,10 @@ const Home = () => {
 
     return(
         <>
-        <HomeGalleryList movies={movies} state={{from:location}}/>
-        {total!== page && < LoadMoreButton onClick = {handleLoadMoreButton}/>}
-        </>
-    );
+      <HomeGalleryList movies={movies} state={{ from: location }} />
+      {total !== page && <LoadMoreButton onClick={handleLoadMoreButton} />}
+    </>
+  );
 };
 
 export default Home;
