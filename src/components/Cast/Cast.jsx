@@ -20,7 +20,7 @@ export const Cast =()=>{
             <ul>
              {cast.map(actor=>{
                 const{id,name,profile_path,character}= actor;
-                const imageUrl ='https://image.tmdb.org/t/p/w500${profile_path}';
+                const imageUrl =`https://image.tmdb.org/t/p/w500${profile_path}`;
                 return(
                     <li key={id}>
                         {profile_path&&(
