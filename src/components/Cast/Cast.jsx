@@ -1,0 +1,39 @@
+import { useParams } from "react-router-dom";
+import {getMovieCredits} from '../services/getApi';
+import {useState, useEffect} from 'react';
+
+export const Cast =()=>{
+    const{movieId}=useParams();
+    const [cast, setCast]=useState(false);
+    const [isLoad, setIsLoad]= useState(false);
+    useEffect(()=>{
+        getMovieCredits(movieId)
+        .then(result=>setCast(result))
+        .finally(setIsLoad(true));
+    },[movieId]);
+
+    return(
+        <>
+        {isLoad&&(
+            <>
+            <p>Cast</p>
+            <ul>
+             {cast.map(actor=>{
+                const{id,name,profile_path,character}= actor;
+                const imageUrl ='https://image.tmdb.org/t/p/w500${profile_path}';
+                return(
+                    <li key={id}>
+                        {profile_path&&(
+                            <img src={imageUrl} width= "100" alt={name}/>
+                        )}
+                        <p> Name: {name}</p>
+                        <p>Character:{character}</p>
+                    </li>
+                );
+             })}
+            </ul>
+            </>
+        )}
+        </>
+    );
+};
