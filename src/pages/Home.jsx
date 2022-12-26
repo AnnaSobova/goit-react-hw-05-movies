@@ -19,6 +19,7 @@ const Home = () => {
     useEffect (()=>{
      getTrendsOfMovies(page).then(movies=>{
         setMovies(prevState=> [...prevState,...movies.results]);
+        setTotal(movies.total_pages);
      });
     }, [page]);
 
