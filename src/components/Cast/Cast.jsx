@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 
 export const Cast =()=>{
     const{movieId}=useParams();
-    const [cast, setCast]=useState(false);
+    const [cast, setCast]=useState([]);
     const [isLoad, setIsLoad]= useState(false);
     useEffect(()=>{
         getMovieCredits(movieId)
@@ -20,11 +20,11 @@ export const Cast =()=>{
             <ul>
              {cast.map(actor=>{
                 const{id,name,profile_path,character}= actor;
-                const imageUrl =`https://image.tmdb.org/t/p/w500${profile_path}`;
+                const imageURL =`https://image.tmdb.org/t/p/w500${profile_path}`;
                 return(
                     <li key={id}>
                         {profile_path&&(
-                            <img src={imageUrl} width= "100" alt={name}/>
+                            <img src={imageURL} width= "100" alt={name}/>
                         )}
                         <p> Name: {name}</p>
                         <p>Character:{character}</p>
