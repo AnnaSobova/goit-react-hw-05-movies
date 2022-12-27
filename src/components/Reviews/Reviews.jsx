@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getMovieReviews } from '../../services/getMovies';
+import { getMovieRewiews} from '../services/getApi';
 
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    getMovieReviews(movieId).then(result => setReviews(result));
+    getMovieRewiews(movieId).then(result => setReviews(result));
   }, [movieId]);
   return (
     <>
