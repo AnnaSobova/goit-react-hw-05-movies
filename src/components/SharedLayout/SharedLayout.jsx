@@ -3,7 +3,7 @@ import { Container, Header, Link } from "./SharedLayout.styled";
 import { Suspense } from "react";
 import {ThreeDots} from 'react-loader-spinner';
 
-export const SharedLayout = () => {
+const SharedLayout = () => {
     return (
       <Container>
         <Header>
@@ -12,22 +12,23 @@ export const SharedLayout = () => {
             <Link to="/movies"> Movies</Link>
           </nav>
         </Header>
-        <Suspense>
-           fallback={
-            <ThreeDots 
-            height="80" 
-            width="80" 
+        <Suspense
+        fallback={
+          <ThreeDots
+            height="80"
+            width="80"
             radius="9"
-            color="#4fa94d" 
+            color="#4fa94d"
             ariaLabel="three-dots-loading"
             wrapperStyle={{}}
             wrapperClassName=""
             visible={true}
-             />
-           }
-        <Outlet/>
-        </Suspense>
+          />
+        }
+      >
+        <Outlet />
+      </Suspense>
       </Container>
     );
   };
-  
+ export default SharedLayout;

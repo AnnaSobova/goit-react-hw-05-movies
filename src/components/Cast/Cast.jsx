@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import {getMovieCredits} from '../services/getApi';
 import {useState, useEffect} from 'react';
 
-export const Cast =()=>{
+ const Cast =()=>{
     const{movieId}=useParams();
     const [cast, setCast]=useState([]);
     const [isLoad, setIsLoad]= useState(false);
@@ -37,3 +37,5 @@ export const Cast =()=>{
         </>
     );
 };
+
+export default Cast;

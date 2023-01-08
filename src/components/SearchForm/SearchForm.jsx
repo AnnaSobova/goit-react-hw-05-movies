@@ -9,7 +9,7 @@ const schema = Yup.object().shape({
         .required(),
     
 });
-export const SearchForm =({onSubmit})=>{
+const SearchForm =({onSubmit})=>{
     return(
         <Formik
         initialValues={{movieSearch:''}}
@@ -33,3 +33,5 @@ export const SearchForm =({onSubmit})=>{
 SearchForm.propType ={
     onSubmit:PropTypes.func.isRequired,
 };
+
+export default SearchForm;

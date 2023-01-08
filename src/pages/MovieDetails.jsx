@@ -1,5 +1,5 @@
 import {getMovieDetails} from '../components/services/getApi';
-import {MovieDetailsItem} from '../components/MovieDetailsItem/MovieDetailsItem.styled';
+import MovieDetailsItem from '../components/MovieDetailsItem/MovieDetailsItem.styled';
 import {useState, useEffect} from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import {ThreeDots} from 'react-loader-spinner';
