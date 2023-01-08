@@ -1,10 +1,12 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://www.themoviedb.org/3";
+
 const KEY = '3fcb05b829685e6a45bc9aa7307d9bc9';
+
+axios.defaults.baseURL = "https://www.themoviedb.org/3";
 
 export const getTrendsOfMovies = async page=>{
     const responce = await axios.get(
-        `trending/movie/day?api_key=${KEY}&page=${page}`
+        `/trending/movie/day?api_key=${KEY}&page=${page}`
     );
     return responce.data 
 };
@@ -25,7 +27,7 @@ export const getMovieDetails = async id=>{
 
 export const  getMovieCredits = async id=>{
     const responce = await axios.get(
-        `movie/${id}/credits?api_key=${KEY}&language=en-US`
+        `/movie/${id}/credits?api_key=${KEY}&language=en-US`
     );
     return responce.data.cast;
 };
