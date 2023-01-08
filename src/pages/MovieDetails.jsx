@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { TiArrowLeft } from "react-icons/ti";
 
 
-
 const MovieInfo=()=>{
     const [movie, setMovie]= useState({});
     const [isLoad, setIsLoad]= useState(false);
@@ -42,11 +41,11 @@ const MovieInfo=()=>{
                             {title} ({releaseYear})
                         </h1>
                         <h2>Popularity: {Math.round(popularity)} </h2>
-                        <h2>Oweerview </h2>
+                        <h2>Owerview </h2>
                         <p>{overview}</p>
                         <h2>Genres</h2>
                         {genres.map(genre =>{
-                            return<p key = {genre.id}> {genre.name}</p>;
+                            return <p key = {genre.id}> {genre.name}</p>;
                         })}
                     </div>
                 </MovieDetailsItem>
@@ -71,7 +70,7 @@ const MovieInfo=()=>{
             height="80" 
             width="80" 
             radius="9"
-            color="#4fa94d" 
+            color="#d7c62a" 
             ariaLabel="three-dots-loading"
             wrapperStyle={{}}
             wrapperClassName=""
