@@ -2,7 +2,7 @@ import axios from "axios";
 
 const KEY = '3fcb05b829685e6a45bc9aa7307d9bc9';
 
-axios.defaults.baseURL = "https://www.themoviedb.org/3";
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 export const getTrendsOfMovies = async page=>{
     const responce = await axios.get(
