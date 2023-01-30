@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import {getMovieCredits} from '../services/getApi';
 import {useState, useEffect} from 'react';
+import CastCard from "./Cast.styled";
 
  const Cast =()=>{
     const{movieId}=useParams();
@@ -17,11 +18,14 @@ import {useState, useEffect} from 'react';
         {isLoad&&(
             <>
             <p>Cast</p>
-            <ul>
+            
+               <ul>
+              <CastCard>  
              {cast.map(actor=>{
                 const{id,name,profile_path,character}= actor;
                 const imageURL =`https://image.tmdb.org/t/p/w500${profile_path}`;
                 return(
+                
                     <li key={id}>
                         {profile_path&&(
                             <img src={imageURL} width= "100" alt={name}/>
@@ -29,9 +33,12 @@ import {useState, useEffect} from 'react';
                         <p> Name: {name}</p>
                         <p>Character:{character}</p>
                     </li>
+                   
                 );
              })}
-            </ul>
+             </CastCard>
+            </ul> 
+            
             </>
         )}
         </>
