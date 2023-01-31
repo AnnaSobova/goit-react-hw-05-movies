@@ -29,9 +29,9 @@ const SearchForm =({onSubmit})=>{
        </Formik>
     );
 };
+export default SearchForm;
 
 SearchForm.propType ={
     onSubmit:PropTypes.func.isRequired,
 };
 
-export default SearchForm;
