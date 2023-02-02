@@ -9,10 +9,11 @@ const schema = Yup.object().shape({
         .required(),
     
 });
-const SearchForm =({onSubmit})=>{
+const SearchForm = ({ onSubmit, initialSearchValue = '' }) => {
+
     return(
         <Formik
-        initialValues={{movieSearch:''}}
+        initialValues={{ movieSearch: initialSearchValue }}
         onSubmit={onSubmit}
         validatorSchema={schema}
        >

@@ -24,8 +24,7 @@ const SharedLayout = () => {
             wrapperClassName=""
             visible={true}
           />
-        }
-      >
+        }>
         <Outlet />
       </Suspense>
       </Container>

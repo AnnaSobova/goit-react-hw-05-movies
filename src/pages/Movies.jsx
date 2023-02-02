@@ -56,7 +56,7 @@ const Movies = () => {
   console.log('KWAK');
   return (
     <>
-      <SearchForm onSubmit={handleSubmitForm} />
+      <SearchForm initialSearchValue={query} onSubmit={handleSubmitForm} />
       {movies.length > 0 && (
         <>
           <MovieGallery movies={movies} state={{ from: location }} />
