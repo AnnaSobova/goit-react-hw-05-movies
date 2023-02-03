@@ -47,7 +47,7 @@ const Movies = () => {
   const handleSubmitForm = query => {
     setPage(1);
     settotal(0);
-    setSearchParams({ query: query.movieSearch });
+    setSearchParams(query.movieSearch !=='' ? { query: query.movieSearch }: {} )
   };
 
   const handleLoadMoreButton = () => {
