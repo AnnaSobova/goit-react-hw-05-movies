@@ -5,7 +5,7 @@ import { useParams, Outlet, useLocation } from 'react-router-dom';
 import {ThreeDots} from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 import { TiArrowLeft } from "react-icons/ti";
-
+import { Suspense } from "react";
 
 const MovieInfo=()=>{
     const [movie, setMovie]= useState({});
@@ -66,6 +66,7 @@ const MovieInfo=()=>{
                 <hr/>
                 </>
             ):(
+                
             <ThreeDots 
             height="80" 
             width="80" 
@@ -78,7 +79,10 @@ const MovieInfo=()=>{
              />
             
             )}
-            <Outlet/>
+            
+     <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
         </div>
      );
 };
